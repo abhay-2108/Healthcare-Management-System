@@ -1,0 +1,259 @@
+.document {
+    padding: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    margin-top: 100px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.document-header h2 {
+    color: #333;
+    font-size: 1.8em;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.search-bar button {
+    background: linear-gradient(135deg, #2d7cf3, #1a5dcf);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(45, 124, 243, 0.2);
+    transition: all 0.3s ease;
+    min-width: 150px; 
+    text-align: center;
+}
+
+.search-bar button:hover {
+    background: linear-gradient(135deg, #1a5dcf, #2d7cf3);
+    box-shadow: 0 6px 15px rgba(45, 124, 243, 0.3);
+    transform: translateY(-2px);
+}
+
+.search-bar button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(45, 124, 243, 0.15);
+}
+
+
+.patient-select {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.patient-select label {
+    font-weight: 600;
+}
+
+.patient-select select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.document-list h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.document-item {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.document-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.document-item h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.document-item p {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#no-documents-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+}
+
+.upload-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.upload-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.upload-section input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.upload-section button {
+    background: linear-gradient(135deg, #2d7cf3, #1a5dcf);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(45, 124, 243, 0.2);
+    transition: all 0.3s ease;
+    min-width: 150px;
+    text-align: center;
+}
+
+.upload-section button:hover {
+    background: linear-gradient(135deg, #1a5dcf, #2d7cf3);
+    box-shadow: 0 6px 15px rgba(45, 124, 243, 0.3);
+    transform: translateY(-2px);
+}
+
+.upload-section button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(45, 124, 243, 0.15);
+}
+
+.document-preview {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.document-preview h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+#preview-content {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; 
+    font-family: 'Arial', sans-serif; 
+    box-sizing: border-box; 
+    width: 100%; 
+    transition: border-color 0.3s ease; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); 
+}
+
+textarea {
+    resize: vertical; 
+    min-height: 120px; 
+}
+
+
+.search-bar input[type="text"] {
+    width: 250px; 
+}
+
+
+
+@media (max-width: 768px) {
+    .document-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .patient-select {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .document-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

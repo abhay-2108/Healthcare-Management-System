@@ -1,0 +1,204 @@
+
+body {
+    background: linear-gradient(135deg, #e6f7ff, #ffffff);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar {
+    background-color: #007BFF;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.logo-name img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo-name img:hover {
+    transform: scale(1.1);
+}
+
+
+.logo-name h3 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.logo-name h3:hover {
+    color: #e6f7ff;
+}
+
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.details {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.details h1 {
+    font-size: 32px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+
+.details h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+.customer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.customer input {
+    padding: 10px;
+    border: none;
+    border: 2px solid #ccc;
+}
+
+.customer input:focus {
+    outline: none;
+}
+
+
+.btn1 {
+    background-color: #007BFF;
+    border: none;
+    padding: 15px 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.btn1:hover {
+    background-color: #007BFF;
+}
+
+
+.google {
+    background-color: white;
+    border: none;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.google svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.google p {
+    font-weight: 600;
+}
+
+
+.details > p {
+    text-align: center;
+    color: rgb(65, 63, 63);
+}
+
+.details > p > a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+}
+
+
+
+
+.details form {
+    margin-top: 20px;
+    
+}
+
+
+.customer input[type="text"],
+.customer input[type="email"],
+.customer input[type="password"] {
+    width: 100%;
+    max-width: 400px; 
+}
+
+
+.customer button {
+    margin-top: 10px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .account {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .details {
+        margin: 10% 5%;
+    }
+
+    .imageSection {
+        margin-top: 50px;
+    }
+}
