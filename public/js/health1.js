@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Emma", id: "556677889", message: "Nesciunt ea iusto! Ex ea eaque optio praesentium labore." },
         { name: "Daniel", id: "334455667", message: "Rem ad expedita temporibus, sed veritatis voluptate sequi quasi hic." },
         { name: "Sophia", id: "778899001", message: "Amet totam dicta voluptatem illum deleniti." },
+        { name: "Sophia", id: "778899001", message: "Amet totam dicta voluptatem illum deleniti." },
+        { name: "John", id: "123456789", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit." },
+        { name: "Alice", id: "987654321", message: "Dolores inventore blanditiis, vero facere soluta accusamus adipisci." },
+        { name: "Michael", id: "112233445", message: "Adipisci perspiciatis laboriosam ad rem nostrum, voluptatem enim minus corporis." },
+        { name: "Emma", id: "556677889", message: "Nesciunt ea iusto! Ex ea eaque optio praesentium labore." },
+        { name: "Daniel", id: "334455667", message: "Rem ad expedita temporibus, sed veritatis voluptate sequi quasi hic." },
+        { name: "Sophia", id: "778899001", message: "Amet totam dicta voluptatem illum deleniti." },
     ];
 
     patients.forEach(patient => {
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         card.innerHTML = `
             <div class="info">
-                <img src="assets/img/doctor.webp" alt="">
+                <img src="images/doctor.webp" alt="">
                 <div class="text">
                     <p>${patient.name}</p>
                     <section>${patient.id}</section>

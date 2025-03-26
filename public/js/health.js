@@ -206,7 +206,7 @@ function generateTable(data) {
                 
         const profileCell = row.cells[1]; 
         const profileImg = document.createElement("img");
-        profileImg.src = "doctor.webp"; 
+        profileImg.src = "/images/doctor.webp"; 
         profileImg.alt = `${patient.name}'s profile`;
         profileImg.classList.add("profile-image"); 
         profileCell.insertBefore(profileImg, profileCell.firstChild); 
@@ -222,7 +222,7 @@ tableContainer.appendChild(table);
 });
 
 
-// Patient Details
+//Patient Details
 
 const patientInfo = [
     {
