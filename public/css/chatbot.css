@@ -30,8 +30,8 @@
 }
 
 #chatbox {
-  display: none;
-  width: 320px;
+  /* display: none; */
+  width: 290px;
   height: 400px;
   background-color: #fff;
   border: 2px solid #0084FF;
@@ -39,8 +39,8 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   position: fixed;
-  bottom: 70px;
-  right: 0;
+  bottom: 90px;
+  right: 20px;
   z-index: 9999;
   animation: slideIn 0.3s ease forwards;
 }
@@ -66,7 +66,7 @@
 }
 
 #chat-content {
-  height: 320px;
+  height: 300px;
   padding: 10px;
   overflow-y: auto;
   background-color: #f9f9f9;
@@ -76,7 +76,7 @@
 #chat-input {
   width: 100%;
   border: none;
-  padding: 12px;
+  padding: 10px;
   border-top: 2px solid #0084FF;
   outline: none;
   background-color: #f1f1f1;

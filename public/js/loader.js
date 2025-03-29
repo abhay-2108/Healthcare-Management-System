@@ -1,32 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Loader.js: DOM fully loaded. Attempting to fetch chatbot.ejs...");
+  console.log("Loader.js: DOM fully loaded. Injecting chatbot...");
 
-  fetch("/chatbot")
-    .then((response) => {
-      console.log("Loader.js: chatbot.ejs response status:", response.status);
-      return response.text();
-    })
-    .then((html) => {
-      console.log("Loader.js: Received chatbot.ejs content.");
-      const container = document.createElement("div");
-      container.innerHTML = html;
-      document.body.appendChild(container);
+  const chatbotHTML = `
+      <div id="chatbot-container">
+        <div id="chatbot-icon">
+          <img src="/images/Medico.jpg" alt="Chatbot">
+        </div>
+        <div id="chatbox">
+          <div id="chat-header">Medico Chatbot</div>
+          <div id="chat-content"></div>
+          <input type="text" id="chat-input" placeholder="Type a message...">
+        </div>
+      </div>
+  `;
 
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "/css/chatbot.css";
-      document.head.appendChild(link);
+  const container = document.createElement("div");
+  container.innerHTML = chatbotHTML;
+  document.body.appendChild(container);
 
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.src = "/js/script.js";
-        script.defer = true;
-        document.body.appendChild(script);
-    }, 100); // Delay script injection to ensure CSS is loaded first
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/css/chatbot.css";
+  document.head.appendChild(link);
 
-      console.log("Loader.js: Chatbot injected successfully.");
-    })
-    .catch((err) => {
-      console.error("Loader.js: Failed to load chatbot:", err);
-    });
+  setTimeout(() => {
+      const script = document.createElement("script");
+      script.src = "/js/script.js";
+      script.defer = true;
+      document.body.appendChild(script);
+  }, 100);
+
+  console.log("Loader.js: Chatbot injected successfully.");
 });

@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require("cors");
 const path = require('path');
+const fs = require("node:fs");
+const mime = require("mime-types");
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const apiKey = process.env.GEMINI_API_KEY;
@@ -24,38 +26,48 @@ const port = 3000;
 
 app.use(cors());
 app.use(express.json());
-
-// Serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Initialize chat session
 const chatSession = model.startChat({
   generationConfig,
-  history: [],
+  history: [
+    {
+      role: "user",
+      parts: [
+        { text: "You are a conversational AI chatbot for healthcare management. Provide concise responses for doctor assistance, patient support, staff guidance, emergency response, medical management, financial queries, and user security." },
+      ],
+    },
+    {
+      role: "model",
+      parts: [{ text: "Understood. Medico at your service. How may I assist you? (Specify role & need)." }],
+    },
+  ],
 });
 
-// Chat endpoint
 app.post('/chat', async (req, res) => {
   try {
-    const { message } = req.body;
-    if (!message) {
-      return res.status(400).json({ error: 'Message is required.' });
-    }
+      const { message } = req.body;
+      if (!message) return res.status(400).json({ error: 'Message is required.' });
 
-    const result = await chatSession.sendMessage(message);
-    const responseText = result.response.text();
-    res.json({ response: responseText });
+      const chatSession = model.startChat({
+          generationConfig,
+          history: [
+              { role: "user", parts: [{ text: message }] }
+          ],
+      });
+
+      const result = await chatSession.sendMessage(message);
+      const responseText = result.response.text();
+      res.json({ response: responseText });
   } catch (error) {
-    console.error('Error processing message:', error);
-    res.status(500).json({ error: 'Error processing message' });
+      console.error('Error processing message:', error);
+      res.status(500).json({ error: 'Error processing message' });
   }
 });
 
-// Start the server
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
